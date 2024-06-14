@@ -1,13 +1,14 @@
+import React from 'react';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import {CryptoPrices} from './components/CryptoPrices.js'
+import CryptoPrices from './components/CryptoPrices';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello world</Text>
+    <SafeAreaView style={styles.container}>
+      <CryptoPrices />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -15,7 +16,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    textAlign:'center'
   },
 });
