@@ -1,8 +1,7 @@
-import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import axios from 'axios';
-import CryptoPrices from '..components/CryptoPrices.js'; 
-
+const React = require('react');
+const { render, fireEvent, waitFor } = require('@testing-library/react-native');
+const axios = require('axios');
+const CryptoPrices = require('../components/CryptoPrices').default;
 jest.mock('axios');
 
 const mockPrices = [
@@ -31,9 +30,9 @@ const mockPrices = [
 
 describe('<CryptoPrices />', () => {
   it('renders correctly and displays crypto prices', async () => {
-    axios.get.mockResolvedValueOnce({ data: mockPrices });
+    axios.get.mockResolvedValueOnce({ data: { data: mockPrices } });
 
-    const { getByText, getByPlaceholderText } = render(<CryptoPrices />);
+    const { getByText, getByPlaceholderText } = render(React.createElement(CryptoPrices));
 
     await waitFor(() => {
       expect(getByText('VeChain (VET)')).toBeTruthy();
@@ -47,9 +46,9 @@ describe('<CryptoPrices />', () => {
   });
 
   it('calculates total portfolio value correctly', async () => {
-    axios.get.mockResolvedValueOnce({ data: mockPrices });
+    axios.get.mockResolvedValueOnce({ data: { data: mockPrices } });
 
-    const { getByText, getByPlaceholderText } = render(<CryptoPrices />);
+    const { getByText, getByPlaceholderText } = render(React.createElement(CryptoPrices));
 
     await waitFor(() => {
       const inputVET = getByPlaceholderText('Amount of VET you own');
