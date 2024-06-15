@@ -46,5 +46,5 @@ A brief description of the project and its purpose.
 1. Clone the repository
 
    ```sh
-   git clone https://github.com/your-repo/crypto-portfolio-tracker.git
-   cd crypto-portfolio-tracker/backend
+   git clone https://github.com/Eliya-shlomo/Live-Prices.git
+   
