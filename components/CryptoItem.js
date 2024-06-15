@@ -1,4 +1,3 @@
-// components/CryptoItem.js
 import React from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 
@@ -37,6 +36,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       flex: 1,
       margin: 5,
+      textAlign:'center'
     },
     name: {
       fontSize: 18,
@@ -63,5 +63,5 @@ const styles = StyleSheet.create({
     },
   });
 
-  
+
 export default CryptoItem;

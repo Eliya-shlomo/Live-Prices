@@ -1,4 +1,3 @@
-// components/CryptoPrices.js
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator, ScrollView, RefreshControl } from 'react-native';
 import axios from 'axios';
@@ -15,7 +14,7 @@ const CryptoPrices = () => {
 
   const fetchPrices = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/crypto-prices');
+      const response = await axios.get('http://10.0.0.23:5000/api/crypto-prices');
       setPrices(response.data);
       calculateTotalValue(response.data);
     } catch (error) {
@@ -28,7 +27,7 @@ const CryptoPrices = () => {
 
   useEffect(() => {
     fetchPrices();
-    const interval = setInterval(fetchPrices, 10000);
+    const interval = setInterval(fetchPrices, 30000);
     return () => clearInterval(interval); 
   }, []);
 
@@ -50,7 +49,7 @@ const CryptoPrices = () => {
   };
 
   if (loading) {
-    return <ActivityIndicator size="large" color="#0000ff" />;
+    return <ActivityIndicator size="large" color="#ccd5ae" />;
   }
 
   if (error) {
@@ -81,10 +80,11 @@ const CryptoPrices = () => {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      flexDirection: 'column',
       padding: 20,
-      backgroundColor: '#fff',
+      backgroundColor: '#e9edc9',
       justifyContent: 'space-between',
+      alignItems:'center'
     },
     cryptoRow: {
       flexDirection: 'row',
