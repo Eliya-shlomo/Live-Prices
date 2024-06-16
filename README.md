@@ -17,7 +17,6 @@ Crypto Portfolio Tracker is a React Native application that helps you keep track
 1. Clone the repository:
     ```sh
     git clone (https://github.com/Eliya-shlomo/Live-Prices.git)
-    cd crypto-portfolio-tracker
     ```
 
 2. Install dependencies:
@@ -27,7 +26,7 @@ Crypto Portfolio Tracker is a React Native application that helps you keep track
 
 3. Start the React Native application:
     ```sh
-    npm start
+    npm expo
     ```
 
 ### Backend
